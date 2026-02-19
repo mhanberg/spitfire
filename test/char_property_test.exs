@@ -1607,6 +1607,7 @@ defmodule Spitfire.CharPropertyTest do
   end
 
   defp run_comparison(context, code, mode) do
+    :erlang.garbage_collect()
     elixir_result = elixir_parse(code)
 
     case {mode, elixir_result} do
